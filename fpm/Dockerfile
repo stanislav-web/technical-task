@@ -17,6 +17,13 @@ RUN sed -i -e 's/listen = \/run\/php\/php7.0-fpm.sock/listen = 0.0.0.0:9000/g' /
 
 WORKDIR /var/app
 
+# Dependencies
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Run tests
+RUN cd /var/app && composer install --prefer-source --no-interaction && php ./vendor/bin/phpunit
+
+
 EXPOSE 9000
 
 CMD ["/usr/bin/supervisord"]

@@ -1,0 +1,38 @@
+{
+  "name": "stanislav-web/zoo",
+  "description": "Amadeus It Group PHP Developer Technical Task",
+  "type": "project",
+  "license": "GPL-v3.0",
+  "version": "0.0.1",
+  "keywords": [
+    "Amadeus",
+    "Amadeus It Group",
+    "Amadeus Technical Task",
+    "Amadeus It Group PHP Developer Technical Task"
+  ],
+  "support": {
+    "issues": "https://github.com/stanislav-web/technical-task/issues"
+  },
+  "authors": [
+    {
+      "name": "Stanislav WEB",
+      "email": "stanisov@gmail.com",
+      "homepage": "https://github.com/stanislav-web",
+      "role": "Developer"
+    }
+  ],
+  "minimum-stability": "stable",
+  "homepage": "https://github.com/stanislav-web/technical-task",
+  "autoload": {
+    "psr-4": {
+      "Zoo\\": "src/Zoo",
+      "Test\\": "tests/Zoo"
+    }
+  },
+  "require": {
+    "php": ">=7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.3"
+  }
+}

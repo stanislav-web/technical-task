@@ -1,1 +1,3 @@
 .idea/
+/application/tests/logs/
+/application/vendor/
