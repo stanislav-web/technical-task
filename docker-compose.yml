@@ -1,0 +1,18 @@
+version: "2"
+services:
+  nginx:
+      build:
+          context: ./nginx
+          dockerfile: ./nginx/Dockerfile
+      ports:
+          - "8080:80"
+      volumes:
+          - ./application:/var/application
+  fpm:
+      build:
+          context: ./fpm
+          dockerfile: ./fpm/Dockerfile
+      volumes:
+          - ./application:/var/application
+      expose:
+          - "9000"
