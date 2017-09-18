@@ -6,7 +6,5 @@
 2. [ADD] Configured and installed unittests environment for Docker @estimated 20m
 3. [ADD] Container for Zoo Animals as Application module @estimated 40m
 4. [ADD] Logger and configured for whole app @estimated 30m
-5. [COMPLETE] Sources from app were done @estimated 1h
-
 
 

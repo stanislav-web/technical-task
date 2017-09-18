@@ -27,19 +27,21 @@ abstract class AbstractLogger {
     /**
      * Info message
      *
-     * @param  string   $message
+     * @param       $message
+     * @param array $context
      *
      * @return void
      */
-    abstract public function info($message);
+    abstract public function info($message, array $context = []);
 
     /**
      * Error message
      *
-     * @param string $message
+     * @param       $message
+     * @param array $context
      *
      * @return void
      */
-    abstract public function error($message);
+    abstract public function error($message, array $context = []);
 
 }

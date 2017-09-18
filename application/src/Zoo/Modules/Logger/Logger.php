@@ -10,22 +10,24 @@ final class Logger extends AbstractLogger {
     /**
      * Info message
      *
-     * @param string  $message
+     * @param       $message
+     * @param array $context
      *
      * @return void
      */
-    public function info($message) {
-        $this->logger->info($message);
+    public function info($message, array $context = []) {
+        $this->logger->addInfo($message, $context);
     }
 
     /**
      * Error message
      *
-     * @param string $message
+     * @param       $message
+     * @param array $context
      *
      * @return void
      */
-    public function error($message) {
-        $this->logger->error($message);
+    public function error($message, array $context = []) {
+        $this->logger->info($message, $context);
     }
 }
