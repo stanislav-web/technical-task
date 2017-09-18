@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace Zoo\Modules\Zoo\Animals;
 
 use Zoo\Modules\Zoo\Animals\Aware\AbstractAnimalObject;
@@ -64,7 +66,7 @@ class Penguin extends AbstractAnimalObject
      * @return string
      */
     public function walk() : string {
-        return 'I like to walk more than anyone else';
+        return 'Unlike a Dolphin, I can walk on the ground';
     }
 
 }

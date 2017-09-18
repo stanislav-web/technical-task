@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace Zoo\Modules\Logger;
 
 /**
@@ -10,24 +12,22 @@ final class Logger extends AbstractLogger {
     /**
      * Info message
      *
-     * @param       $message
-     * @param array $context
+     * @param string  $message
      *
      * @return void
      */
-    public function info($message, array $context = []) {
-        $this->logger->addInfo($message, $context);
+    public function info($message) {
+        $this->logger->info($message);
     }
 
     /**
      * Error message
      *
-     * @param       $message
-     * @param array $context
+     * @param string $message
      *
      * @return void
      */
-    public function error($message, array $context = []) {
-        $this->logger->info($message, $context);
+    public function error($message) {
+        $this->logger->error($message);
     }
 }

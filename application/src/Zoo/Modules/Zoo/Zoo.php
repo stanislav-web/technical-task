@@ -1,8 +1,16 @@
 <?php
+declare(strict_types=1);
+
 namespace  Zoo\Modules\Zoo;
 
+use Zoo\Modules\Zoo\Animals\Aware\Restricts\{
+    FlyingInterface,
+    MammalInterface,
+    SwimmingInterface,
+    WalkingInterface
+};
 use Zoo\Modules\Zoo\Exceptions\AnimalException;
-use Zoo\Modules\Zoo\ValueObjects\Aware\AnimalInterface;
+use Zoo\Modules\Zoo\Animals\Aware\AnimalInterface;
 
 /**
  * Class Zoo
@@ -13,7 +21,7 @@ final class Zoo extends ZooFactory {
     /**
      * @const ANIMALS_SET
      */
-    const ANIMALS_SET = '\Zoo\Modules\Zoo\ValueObjects\\';
+    const ANIMALS_SET = '\Zoo\Modules\Zoo\Animals\\';
 
     /**
      * Create animal
@@ -21,7 +29,7 @@ final class Zoo extends ZooFactory {
      * @param string $animal
      * @throws AnimalException
      *
-     * @return AnimalInterface
+     * @return AnimalInterface|FlyingInterface|MammalInterface|SwimmingInterface|WalkingInterface
      */
     public function conceiveAnimal(string $animal): AnimalInterface {
 
@@ -29,10 +37,10 @@ final class Zoo extends ZooFactory {
 
         try {
             $reflection = new \ReflectionClass(self::ANIMALS_SET . $animal);
-            return $reflection->newInstance();
+            return $reflection->newInstanceWithoutConstructor();
 
         } catch (\ReflectionException $e) {
-            throw new AnimalException('The `'.$animal.'` wasn\'t born');
+            throw new AnimalException('Animal '.$animal.' wasn\'t born');
         }
     }
 

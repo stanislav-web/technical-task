@@ -1,17 +1,13 @@
 version: "2"
 services:
-  nginx:
-      build:
-          context: ./nginx
-          dockerfile: ./nginx/Dockerfile
-      ports:
-          - "8080:80"
-      volumes:
-          - ./application:/var/application
+  tests:
+    build:
+        context: ./tests
+    links:
+      - fpm
   fpm:
       build:
           context: ./fpm
-          dockerfile: ./fpm/Dockerfile
       volumes:
           - ./application:/var/application
       expose:

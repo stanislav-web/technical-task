@@ -1,8 +1,16 @@
 <?php
+declare(strict_types=1);
+
 namespace Zoo\Modules\Zoo;
 
+use Zoo\Modules\Zoo\Animals\Aware\Restricts\{
+    FlyingInterface,
+    MammalInterface,
+    SwimmingInterface,
+    WalkingInterface
+};
 use Zoo\Modules\Zoo\Exceptions\AnimalException;
-use Zoo\Modules\Zoo\ValueObjects\Aware\AnimalInterface;
+use Zoo\Modules\Zoo\Animals\Aware\AnimalInterface;
 
 /**
  * Class ZooFactory
@@ -13,10 +21,10 @@ abstract class ZooFactory {
     /**
      * Create animal
      *
-     * @param string $animal
+     * @param string $content
      * @throws AnimalException
      *
-     * @return AnimalInterface
+     * @return AnimalInterface|FlyingInterface|MammalInterface|SwimmingInterface|WalkingInterface
      */
     abstract public function conceiveAnimal(string $content): AnimalInterface;
 }

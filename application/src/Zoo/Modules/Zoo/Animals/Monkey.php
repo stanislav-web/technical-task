@@ -5,21 +5,20 @@ namespace Zoo\Modules\Zoo\Animals;
 
 use Zoo\Modules\Zoo\Animals\Aware\AbstractAnimalObject;
 use Zoo\Modules\Zoo\Animals\Aware\Restricts\{
-    FlyingInterface,
-    WalkingInterface
+    MammalInterface, WalkingInterface
 };
 
 /**
- * Class Bird
+ * Class Fish
  * @package Zoo\Modules\Zoo\Animals
  */
-class Bird extends AbstractAnimalObject
-    implements FlyingInterface, WalkingInterface {
+class Monkey extends AbstractAnimalObject
+    implements WalkingInterface, MammalInterface {
 
     /**
      * @const KIND
      */
-    const KIND = 'Bird';
+    const KIND = 'Monkey';
 
     /**
      * The birth of an animal
@@ -27,11 +26,10 @@ class Bird extends AbstractAnimalObject
      * @return string
      */
     public function birth(): string {
-
         $now = new \DateTime();
         $birthday = $now->format('D, d \of M H:i:s');
-        return 'Hello, man! I\'am '.self::KIND.' and today is my birthday '.$birthday;
-
+        return 'Hello, man! I\'am '.self::KIND.' and today is my birthday '.$birthday.PHP_EOL
+            .'I am frendly for you';
     }
 
     /**
@@ -40,8 +38,9 @@ class Bird extends AbstractAnimalObject
      * @return string
      */
     public function eat(): string {
-        return 'I want to eat! And it\'s time to get some fishes .. mmm';
+        return 'I want to eat! And it\'s time to get some worms .. mmm';
     }
+
 
     /**
      * Meet the need )
@@ -53,12 +52,12 @@ class Bird extends AbstractAnimalObject
     }
 
     /**
-     * Flying
+     * Getting milk from mammal
      *
      * @return string
      */
-    public function fly() : string {
-        return 'I can fly while others can not!';
+    public function giveMilk(): string {
+        return 'I can give milk to my children, because I am a mammal';
     }
 
     /**
@@ -66,7 +65,9 @@ class Bird extends AbstractAnimalObject
      *
      * @return string
      */
-    public function walk() : string {
-        return 'I am bird who doesn\'t fear walking on the ground!';
+    public function walk(): string {
+        return 'I am monkey who doesn\'t fear walking on the ground!';
     }
+
+
 }
