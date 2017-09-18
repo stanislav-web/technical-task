@@ -1,9 +1,9 @@
 <?php
-namespace Zoo\Modules\Animal\Exceptions;
+namespace Zoo\Modules\Zoo\Exceptions;
 
 /**
  * Class AnimalException
- * @package Zoo\Modules\Animal\Exceptions
+ * @package Zoo\Modules\Zoo\Exceptions
  */
 class AnimalException extends \Exception {
 

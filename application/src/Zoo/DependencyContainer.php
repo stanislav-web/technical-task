@@ -37,7 +37,7 @@ final class DependencyContainer implements DependencyContainerInterface {
 
         $isExist = $this->registry->offsetExists($moduleName);
         if(true === $isExist) {
-            throw new DependencyContainerException('Module '.$moduleName.' already registered ');
+            throw new DependencyContainerException('Zoo '.$moduleName.' already registered ');
         }
         $this->registry->offsetSet($moduleName, $moduleInstance);
 
@@ -56,7 +56,7 @@ final class DependencyContainer implements DependencyContainerInterface {
         $isExist = $this->registry->offsetExists($moduleName);
 
         if(false === $isExist) {
-            throw new DependencyContainerException('Module '.$moduleName.' does not registered ');
+            throw new DependencyContainerException('Zoo '.$moduleName.' does not registered ');
         }
 
         return $this->registry->offsetGet($moduleName);
