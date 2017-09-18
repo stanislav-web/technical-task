@@ -1,16 +1,11 @@
 <?php
-namespace Zoo\Modules\Zoo\ValueObjects\Aware;
+namespace Zoo\Modules\Zoo\Animals\Aware;
 
 /**
  * Class AbstractAnimalObject
- * @package Zoo\Modules\Zoo\Aware\ValueObjects
+ * @package Zoo\Modules\Zoo\Aware\Animals
  */
-abstract class AbstractAnimalObject {
-
-    /**
-     * @var string
-     */
-    protected $food = 'meet';
+abstract class AbstractAnimalObject implements AnimalInterface {
 
     /**
      * @param string $property
@@ -45,10 +40,9 @@ abstract class AbstractAnimalObject {
      *
      * @param string $name
      * @param array $arguments
-     * @return $this
+     * @return string
      */
     public function __call($name, $arguments) {
-        exit('dsd');
-        return $this;
+        return 'I can\'t '.$name;
     }
 }

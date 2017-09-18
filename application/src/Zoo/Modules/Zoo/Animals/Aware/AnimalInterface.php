@@ -1,14 +1,15 @@
 <?php
-namespace Zoo\Modules\Zoo\ValueObjects\Aware;
+namespace Zoo\Modules\Zoo\Animals\Aware;
 
 /**
  * Interface AnimalInterface
- * @package Zoo\Modules\Zoo\ValueObjects\Aware
+ * @package Zoo\Modules\Zoo\Animals\Aware
  */
-interface AnimalInterface
-{
+interface AnimalInterface {
+
     /**
      * The birth of an animal
+     *
      * @return string
      */
     public function birth() : string;
@@ -18,7 +19,7 @@ interface AnimalInterface
      *
      * @return string
      */
-    public function eat($food) : string;
+    public function eat() : string;
 
     /**
      * Meet the need )
