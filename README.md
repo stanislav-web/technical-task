@@ -30,7 +30,7 @@ Please type command below to show their capabilities:
 
 ```
 > cd application/
-> php index.php {Animal}
+> php index.php -a {Animal}
 ```
 
 You see something like 
